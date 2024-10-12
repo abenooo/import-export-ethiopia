@@ -25,6 +25,9 @@ import heroImage1 from "./public/assets/image.jpg";
 import heroImage2 from "./public/assets/image2.jpg";
 import heroImage3 from "./public/assets/image.jpg";
 import { Coffee, ShoppingBag, Leaf, Users } from "lucide-react";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 export default function Home() {
   // const [isOpen, setIsOpen] = useState(false);
 
@@ -610,7 +613,7 @@ export default function Home() {
                     we&apos;ll get back to you as soon as possible.
                   </CardDescription>
                 </CardHeader>
-                {/* <CardContent>
+                <CardContent>
                   <form className="space-y-4">
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
@@ -630,11 +633,14 @@ export default function Home() {
                         type="email"
                       />
                     </div>
+                    <div>
+                    <Textarea placeholder="Type your message here." />
+                    </div>
                     <Button className="w-full" type="submit">
                       Send Message
                     </Button>
                   </form>
-                </CardContent> */}
+                </CardContent>
               </Card>
 
               <Card className="w-full">
