@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Globe,
   ChevronLeft,
@@ -35,6 +35,7 @@ import { Coffee, ShoppingBag, Leaf, Users } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 export default function Home() {
   const settings = {
     dots: true,
@@ -45,6 +46,24 @@ export default function Home() {
     autoplay: true,
     autoplaySpeed: 2000,
   };
+  // const [currentTestimonial, setCurrentTestimonial] = useState(0)
+  const [cardsToShow, setCardsToShow] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setCardsToShow(3);
+      } else if (window.innerWidth >= 768) {
+        setCardsToShow(2);
+      } else {
+        setCardsToShow(1);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const heroImages = [heroImage1, heroImage2, heroImage3];
 
@@ -100,32 +119,44 @@ export default function Home() {
     {
       quote:
         "TradeAtlas has revolutionized how we find international business opportunities.",
-      author: "Abebe Kebede, Ethiopian Coffee Exporter",
+      author: "Abebe Kebede",
+      role: "Ethiopian Coffee Exporter",
+      avatar: "/placeholder.svg?height=100&width=100",
     },
     {
       quote:
         "The market insights provided by TradeAtlas have been invaluable for our growth strategy.",
-      author: "Fatima Ahmed, Textile Importer",
+      author: "Fatima Ahmed",
+      role: "Textile Importer",
+      avatar: "/placeholder.svg?height=100&width=100",
     },
     {
       quote:
         "We've expanded into new markets effortlessly thanks to TradeAtlas's global network.",
-      author: "Dawit Haile, Agricultural Products Exporter",
+      author: "Dawit Haile",
+      role: "Agricultural Products Exporter",
+      avatar: "/placeholder.svg?height=100&width=100",
     },
     {
       quote:
         "TradeAtlas's AI-powered matching has connected us with perfect business partners.",
-      author: "Tigist Mengesha, Leather Goods Manufacturer",
+      author: "Tigist Mengesha",
+      role: "Leather Goods Manufacturer",
+      avatar: "/placeholder.svg?height=100&width=100",
     },
     {
       quote:
         "The logistics support from TradeAtlas has simplified our international shipping process.",
-      author: "Yohannes Tadesse, Electronics Importer",
+      author: "Yohannes Tadesse",
+      role: "Electronics Importer",
+      avatar: "/placeholder.svg?height=100&width=100",
     },
     {
       quote:
         "We've seen a 30% increase in exports since using TradeAtlas's market analysis tools.",
-      author: "Hiwot Gebremariam, Spice Exporter",
+      author: "Hiwot Gebremariam",
+      role: "Spice Exporter",
+      avatar: "/placeholder.svg?height=100&width=100",
     },
   ];
   const navItems = [
@@ -367,7 +398,7 @@ export default function Home() {
                       </CardContent>
                       <CardFooter className="pt-6">
                         <Button className="w-full text-lg py-6">
-                        Business Area
+                          Business Area
                         </Button>
                       </CardFooter>
                     </Card>
@@ -438,49 +469,88 @@ export default function Home() {
         >
           {/* Testimonial Section */}
           <section className="py-20">
-            <div className="container mx-auto px-4">
-              <h2 className="text-3xl font-bold text-center mb-12">
-                What Our Clients Say
-              </h2>
-              <div className="relative">
-                <div className="flex flex-col sm:flex-row gap-6 mb-8">
-                  {[0, 1, 2].map((offset) => {
-                    const index =
-                      (currentTestimonial + offset) % testimonials.length;
-                    return (
-                      <Card key={index} className="bg-white shadow-lg flex-1">
-                        <CardContent className="p-6">
-                          <p className="text-lg italic mb-4">{`"${testimonials[index].quote}"`}</p>
-                          <p className="font-semibold">
-                            - {testimonials[index].author}
-                          </p>
-                        </CardContent>
-                      </Card>
-                    );
-                  })}
+              <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100 overflow-hidden">
+                <div className="container mx-auto px-4">
+                  <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+                    What Our Clients Say
+                  </h2>
+                  <div className="relative max-w-7xl mx-auto">
+                    <div
+                      className="flex space-x-6 mb-8 transition-transform duration-300 ease-in-out"
+                      style={{
+                        transform: `translateX(-${
+                          currentTestimonial * (100 / cardsToShow)
+                        }%)`,
+                      }}
+                    >
+                      {testimonials.map((testimonial, index) => (
+                        <Card
+                          key={index}
+                          className={`bg-white shadow-lg flex-shrink-0 transform transition-all duration-300 ${
+                            index % 2 === 0 ? "translate-y-5" : ""
+                          }`}
+                          style={{
+                            width: `calc(${100 / cardsToShow}% - ${
+                              (cardsToShow - 1) * 1.5
+                            }rem / ${cardsToShow})`,
+                          }}
+                        >
+                          <CardContent className="p-6">
+                            <div className="flex items-center mb-4">
+                              <Avatar className="w-16 h-16 mr-4">
+                                <AvatarImage
+                                  src={testimonial.avatar}
+                                  alt={testimonial.author}
+                                />
+                                <AvatarFallback>
+                                  {testimonial.author
+                                    .split(" ")
+                                    .map((n) => n[0])
+                                    .join("")}
+                                </AvatarFallback>
+                              </Avatar>
+                              <div>
+                                <p className="font-semibold text-lg text-gray-900">
+                                  {testimonial.author}
+                                </p>
+                                <p className="text-gray-600">
+                                  {testimonial.role}
+                                </p>
+                              </div>
+                            </div>
+                            <p className="text-lg italic text-gray-700">{`"${testimonial.quote}"`}</p>
+                          </CardContent>
+                        </Card>
+                      ))}
+                    </div>
+                    <div className="flex justify-center space-x-4 mt-8">
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        className="bg-white shadow-md hover:bg-gray-100"
+                        onClick={prevTestimonial}
+                        disabled={currentTestimonial === 0}
+                      >
+                        <ChevronLeft className="h-4 w-4" />
+                        <span className="sr-only">Previous testimonials</span>
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        className="bg-white shadow-md hover:bg-gray-100"
+                        onClick={nextTestimonial}
+                        disabled={
+                          currentTestimonial ===
+                          testimonials.length - cardsToShow
+                        }
+                      >
+                        <ChevronRight className="h-4 w-4" />
+                        <span className="sr-only">Next testimonials</span>
+                      </Button>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex justify-center space-x-4">
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="bg-white shadow-md hover:bg-gray-100"
-                    onClick={prevTestimonial}
-                  >
-                    <ChevronLeft className="h-4 w-4" />
-                    <span className="sr-only">Previous testimonials</span>
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="bg-white shadow-md hover:bg-gray-100"
-                    onClick={nextTestimonial}
-                  >
-                    <ChevronRight className="h-4 w-4" />
-                    <span className="sr-only">Next testimonials</span>
-                  </Button>
-                </div>
-              </div>
-            </div>
+              </section>
           </section>
         </section>
         {/* CTA Section */}
