@@ -1,6 +1,15 @@
 "use client";
 import { useState } from "react";
-import { Globe, ChevronLeft, ChevronRight, ArrowRight, Factory, Palette, Heart } from "lucide-react";
+import {
+  Globe,
+  ChevronLeft,
+  ChevronRight,
+  ArrowRight,
+  Factory,
+  Palette,
+  Heart,
+  Building2,
+} from "lucide-react";
 import { Link } from "react-scroll";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -45,7 +54,29 @@ export default function Home() {
     setCurrentTestimonial(
       (prev) => (prev - 1 + testimonials.length) % testimonials.length
     );
-
+  const areas = [
+    {
+      title: "Manufacturing",
+      description: "Manufacturing operations",
+      content:
+        "The blanket and acrylic yarn dyeing plant is the major line of manufacturing business portfolio of KK. Our factory is equipped with modern computerized and automated machines, as well as conventional technology machines.",
+      icon: Factory,
+    },
+    {
+      title: "Export",
+      description: "Export operations",
+      content:
+        "The exporting department at PamRisen mainly focuses on the international operation of the company, aiming to promote Ethiopian Coffee, Pulse, Oil Seed, and Mining to overseas markets.",
+      icon: Globe,
+    },
+    {
+      title: "Real Estate",
+      description: "Real Estate operations",
+      content:
+        "Our company implements innovative solutions in the engineering, design, and strategy sectors with the potential to create aesthetically marvelous spaces.",
+      icon: Building2,
+    },
+  ];
   const businessAreas = [
     {
       title: "Manufacturing",
@@ -155,9 +186,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <button
-                className="flex items-center"
-              >
+              <button className="flex items-center">
                 <Globe className="h-8 w-8 text-blue-600" />
                 <span className="ml-2 text-xl font-bold text-gray-800">
                   PamRisen
@@ -186,108 +215,110 @@ export default function Home() {
 
       {/* Hero */}
       <div className="">
-      <section id="home-section" className="bg-gradient-to-r from-blue-800 to-green-700 text-white overflow-hidden">
-      <div className="container mx-auto px-4 py-16 sm:py-24 lg:py-32">
-        <div className="flex flex-col lg:flex-row items-center">
-          <div className="w-full lg:w-1/2 space-y-8 mb-12 lg:mb-0">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight text-white tracking-tight">
-              Bridging Ethiopia with Global Markets
-            </h1>
-            <div className="space-y-6">
-              {[
-                {
-                  icon: Coffee,
-                  text: "Facilitating seamless trade partnerships and fostering economic growth.",
-                },
-                {
-                  icon: ShoppingBag,
-                  text: "Enhancing the global presence of Ethiopian products through dedicated support.",
-                },
-                {
-                  icon: Globe,
-                  text: "Connecting local producers with international buyers to expand market reach.",
-                },
-                {
-                  icon: Leaf,
-                  text: "Leveraging Ethiopia's rich resources to meet global market demands.",
-                },
-                {
-                  icon: Users,
-                  text: "Promoting Ethiopian culture and artisan skills on the global stage."
-                },
-                {
-                  icon: Factory,
-                  text: "Empowering local manufacturing with advanced technologies for higher market competitiveness."
-                },
-                {
-                  icon: Palette,
-                  text: "Showcasing the vibrancy and diversity of Ethiopian textiles and crafts."
-                },
-                {
-                  icon: Heart,
-                  text: "Building community partnerships to sustain and grow the Ethiopian export sector."
-                },
-              ].map((item, index) => (
-                <div key={index} className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <item.icon className="h-8 w-8 text-yellow-400" />
-                  </div>
-                  <p className="text-base sm:text-lg lg:text-xl text-gray-200 font-medium leading-relaxed">
-                    {item.text}
-                  </p>
+        <section
+          id="home-section"
+          className="bg-gradient-to-r from-blue-800 to-green-700 text-white overflow-hidden"
+        >
+          <div className="container mx-auto px-4 py-16 sm:py-24 lg:py-32">
+            <div className="flex flex-col lg:flex-row items-center">
+              <div className="w-full lg:w-1/2 space-y-8 mb-12 lg:mb-0">
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight text-white tracking-tight">
+                  Bridging Ethiopia with Global Markets
+                </h1>
+                <div className="space-y-6">
+                  {[
+                    {
+                      icon: Coffee,
+                      text: "Facilitating seamless trade partnerships and fostering economic growth.",
+                    },
+                    {
+                      icon: ShoppingBag,
+                      text: "Enhancing the global presence of Ethiopian products through dedicated support.",
+                    },
+                    {
+                      icon: Globe,
+                      text: "Connecting local producers with international buyers to expand market reach.",
+                    },
+                    {
+                      icon: Leaf,
+                      text: "Leveraging Ethiopia's rich resources to meet global market demands.",
+                    },
+                    {
+                      icon: Users,
+                      text: "Promoting Ethiopian culture and artisan skills on the global stage.",
+                    },
+                    {
+                      icon: Factory,
+                      text: "Empowering local manufacturing with advanced technologies for higher market competitiveness.",
+                    },
+                    {
+                      icon: Palette,
+                      text: "Showcasing the vibrancy and diversity of Ethiopian textiles and crafts.",
+                    },
+                    {
+                      icon: Heart,
+                      text: "Building community partnerships to sustain and grow the Ethiopian export sector.",
+                    },
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start space-x-4">
+                      <div className="flex-shrink-0">
+                        <item.icon className="h-8 w-8 text-yellow-400" />
+                      </div>
+                      <p className="text-base sm:text-lg lg:text-xl text-gray-200 font-medium leading-relaxed">
+                        {item.text}
+                      </p>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                size="lg"
-                className="bg-yellow-500 text-blue-900 hover:bg-yellow-400 text-lg font-semibold"
-              >
-                Explore Our Services
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className=" bg-blue-500 hover:bg-blue-700 text-lg font-semibold"
-              >
-                Contact Us
-              </Button>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button
+                    size="lg"
+                    className="bg-yellow-500 text-blue-900 hover:bg-yellow-400 text-lg font-semibold"
+                  >
+                    Explore Our Services
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className=" bg-blue-500 hover:bg-blue-700 text-lg font-semibold"
+                  >
+                    Contact Us
+                  </Button>
+                </div>
+              </div>
+              <div className="w-full lg:w-1/2 lg:pl-12">
+                <div className="rounded-lg shadow-2xl overflow-hidden">
+                  <Slider {...settings}>
+                    {heroImages.map((img, idx) => (
+                      <div key={idx} className="outline-none">
+                        <Image
+                          src={img}
+                          alt={`Ethiopian landscape ${idx + 1}`}
+                          width={800}
+                          height={600}
+                          objectFit="cover"
+                          className="w-full h-[400px] object-cover"
+                        />
+                      </div>
+                    ))}
+                  </Slider>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="w-full lg:w-1/2 lg:pl-12">
-            <div className="rounded-lg shadow-2xl overflow-hidden">
-              <Slider {...settings}>
-                {heroImages.map((img, idx) => (
-                  <div key={idx} className="outline-none">
-                    <Image
-                      src={img}
-                      alt={`Ethiopian landscape ${idx + 1}`}
-                      width={800}
-                      height={600}
-                      objectFit="cover"
-                      className="w-full h-[400px] object-cover"
-                    />
-                  </div>
-                ))}
-              </Slider>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
         <div className="min-h-screen bg-gray-200">
-
           <section className="py-20 container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-6">
-                About PamRisen</h2>
+                <h2 className="text-3xl font-bold mb-6">About PamRisen</h2>
                 <p className="text-lg text-gray-700 mb-6">
-                PamRisen is the largest business entity in Ethiopia, established
-                by the visionary Mr. Ketema Kebede over forty years ago. Our
-                diverse portfolio spans manufacturing, export, and real estate,
-                contributing significantly to Ethiopia&apos;s economic growth.
+                  PamRisen is the largest business entity in Ethiopia,
+                  established by the visionary Mr. Ketema Kebede over forty
+                  years ago. Our diverse portfolio spans manufacturing, export,
+                  and real estate, contributing significantly to Ethiopia&apos;s
+                  economic growth.
                 </p>
                 <p className="text-lg text-gray-700 mb-6">
                   Our success is built on a foundation of visionary leadership,
@@ -314,36 +345,35 @@ export default function Home() {
 
           <section className="bg-gray-100 py-20">
             <div className="container mx-auto px-4">
-              <h2 className="text-3xl font-bold text-center mb-12">
-                Our Business Areas
-              </h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {businessAreas.map((area, index) => (
-                  <Card
-                    key={index}
-                    className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300"
-                  >
-                    <CardHeader>
-                      <CardTitle>{area.title}</CardTitle>
-                    </CardHeader>
-                    <Image
-                      src={area.image}
-                      alt={`${area.title} operations`}
-                      width={400}
-                      height={200}
-                      className="w-full h-48 object-cover"
-                    />
-                    <CardContent className="mt-4">
-                      <CardDescription>{area.description}</CardDescription>
-                    </CardContent>
-                    <CardFooter>
-                      <Button variant="outline">
-                        Read More
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </CardFooter>
-                  </Card>
-                ))}
+              <div className="container mx-auto px-4 py-12">
+                <h2 className="text-4xl font-bold text-center mb-12">
+                  Our Business Areas
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {areas.map((area, index) => (
+                    <Card key={index} className="flex flex-col h-full">
+                      <CardHeader className="text-center">
+                        <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                          <area.icon className="w-10 h-10 text-primary-foreground" />
+                        </div>
+                        <CardTitle className="text-2xl mb-2">
+                          {area.title}
+                        </CardTitle>
+                        <CardDescription className="text-lg">
+                          {area.description}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="flex-grow text-center">
+                        <p className="text-muted-foreground">{area.content}</p>
+                      </CardContent>
+                      <CardFooter className="pt-6">
+                        <Button className="w-full text-lg py-6">
+                          Read More
+                        </Button>
+                      </CardFooter>
+                    </Card>
+                  ))}
+                </div>
               </div>
             </div>
           </section>
@@ -491,7 +521,7 @@ export default function Home() {
                       />
                     </div>
                     <div>
-                    <Textarea placeholder="Type your message here." />
+                      <Textarea placeholder="Type your message here." />
                     </div>
                     <Button className="w-full" type="submit">
                       Send Message
