@@ -1,11 +1,6 @@
 "use client";
 import { useState } from "react";
-import {
-  Globe,
-  ChevronLeft,
-  ChevronRight,
-  ArrowRight,
-} from "lucide-react";
+import { Globe, ChevronLeft, ChevronRight, ArrowRight, Factory, Palette, Heart } from "lucide-react";
 import { Link } from "react-scroll";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -29,6 +24,7 @@ import Slider from "react-slick";
 import heroImage1 from "./public/assets/image.jpg";
 import heroImage2 from "./public/assets/image2.jpg";
 import heroImage3 from "./public/assets/image.jpg";
+import { Coffee, ShoppingBag, Leaf, Users } from "lucide-react";
 export default function Home() {
   // const [isOpen, setIsOpen] = useState(false);
 
@@ -43,13 +39,7 @@ export default function Home() {
     autoplaySpeed: 2000,
   };
 
-  
-  const heroImages = [
-    heroImage1,
-    heroImage2,
-    heroImage3
-  ];
-
+  const heroImages = [heroImage1, heroImage2, heroImage3];
 
   const nextTestimonial = () =>
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -209,7 +199,8 @@ export default function Home() {
                   smooth={true}
                   offset={-70}
                   duration={500}
-                  activeClass="bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 " // Tailwind classes for active state
+                  activeClass="relative font-medium text-primary before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-primary before:transition hover:before:scale-x-100"
+                  // activeClass="bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 "
                   className="cursor-pointer inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900 border-b-2 border-transparent hover:border-blue-500 transition duration-300"
                 >
                   {item.name}
@@ -222,7 +213,97 @@ export default function Home() {
 
       {/* Hero */}
       <div className="">
-        <section
+      <section id="home-section" className="bg-gradient-to-r from-blue-800 to-green-700 text-white overflow-hidden">
+      <div className="container mx-auto px-4 py-16 sm:py-24 lg:py-32">
+        <div className="flex flex-col lg:flex-row items-center">
+          <div className="w-full lg:w-1/2 space-y-8 mb-12 lg:mb-0">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight text-white tracking-tight">
+              Bridging Ethiopia with Global Markets
+            </h1>
+            <div className="space-y-6">
+              {[
+                {
+                  icon: Coffee,
+                  text: "Facilitating seamless trade partnerships and fostering economic growth.",
+                },
+                {
+                  icon: ShoppingBag,
+                  text: "Enhancing the global presence of Ethiopian products through dedicated support.",
+                },
+                {
+                  icon: Globe,
+                  text: "Connecting local producers with international buyers to expand market reach.",
+                },
+                {
+                  icon: Leaf,
+                  text: "Leveraging Ethiopia's rich resources to meet global market demands.",
+                },
+                {
+                  icon: Users,
+                  text: "Promoting Ethiopian culture and artisan skills on the global stage."
+                },
+                {
+                  icon: Factory,
+                  text: "Empowering local manufacturing with advanced technologies for higher market competitiveness."
+                },
+                {
+                  icon: Palette,
+                  text: "Showcasing the vibrancy and diversity of Ethiopian textiles and crafts."
+                },
+                {
+                  icon: Heart,
+                  text: "Building community partnerships to sustain and grow the Ethiopian export sector."
+                },
+              ].map((item, index) => (
+                <div key={index} className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">
+                    <item.icon className="h-8 w-8 text-yellow-400" />
+                  </div>
+                  <p className="text-base sm:text-lg lg:text-xl text-gray-200 font-medium leading-relaxed">
+                    {item.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                size="lg"
+                className="bg-yellow-500 text-blue-900 hover:bg-yellow-400 text-lg font-semibold"
+              >
+                Explore Our Services
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className=" bg-blue-500 hover:bg-blue-700 text-lg font-semibold"
+              >
+                Contact Us
+              </Button>
+            </div>
+          </div>
+          <div className="w-full lg:w-1/2 lg:pl-12">
+            <div className="rounded-lg shadow-2xl overflow-hidden">
+              <Slider {...settings}>
+                {heroImages.map((img, idx) => (
+                  <div key={idx} className="outline-none">
+                    <Image
+                      src={img}
+                      alt={`Ethiopian landscape ${idx + 1}`}
+                      width={800}
+                      height={600}
+                      objectFit="cover"
+                      className="w-full h-[400px] object-cover"
+                    />
+                  </div>
+                ))}
+              </Slider>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+        {/* <section
           id="home-section"
           className="relative bg-gradient-to-r from-blue-700 to-green-600 text-white overflow-hidden"
         >
@@ -239,23 +320,60 @@ export default function Home() {
             id="home-section"
             className="relative bg-gradient-to-r from-blue-700 to-green-600 text-white overflow-hidden"
           >
-            <div className="container mx-auto px-4 py-24 sm:py-32 lg:py-40 flex">
+            <div className="container mx-auto px-4 py-24 sm:py-32 lg:py-40 flex flex-col lg:flex-row">
+              <div className="lg:hidden w-full">
+                <Slider {...settings}>
+                  {heroImages.map((img, idx) => (
+                    <div key={idx}>
+                      <Image
+                        src={img}
+                        alt={`Ethiopian landscape ${idx + 1}`}
+                        width={500}
+                        height={500}
+                        objectFit="cover"
+                        className="rounded-lg shadow-2xl"
+                      />
+                    </div>
+                  ))}
+                </Slider>
+              </div>
               <div className="w-full lg:w-1/2 space-y-6">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                  Connecting Ethiopia to the World
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-white tracking-tight">
+                  Bridging Ethiopia with Global Markets
                 </h1>
-                <p className="text-xl sm:text-2xl text-gray-200 max-w-xl">
-                  Empowering Ethiopian businesses with global trade solutions
-                  for coffee, textiles, and more.
-                </p>
-                <p className="text-xl sm:text-2xl text-gray-200 max-w-xl">
-                  Empowering Ethiopian businesses with global trade solutions
-                  for coffee, textiles, and more.
-                </p>
-                <p className="text-xl sm:text-2xl text-gray-200 max-w-xl">
-                  Empowering Ethiopian businesses with global trade solutions
-                  for coffee, textiles, and more.
-                </p>
+                <div className="space-y-6">
+                  {[
+                    {
+                      icon: Coffee,
+                      text: "Facilitating seamless trade partnerships and fostering economic growth by exporting Ethiopia's finest coffee, textiles, and traditional crafts.",
+                    },
+                    {
+                      icon: ShoppingBag,
+                      text: "Enhancing the global presence of Ethiopian products through dedicated support and comprehensive trade solutions.",
+                    },
+                    {
+                      icon: Globe,
+                      text: "Connecting local producers with international buyers to expand market reach and increase profitability.",
+                    },
+                    {
+                      icon: Leaf,
+                      text: "Leveraging Ethiopia's rich resources to meet the demand of global markets, ensuring quality and sustainability.",
+                    },
+                    {
+                      icon: Users,
+                      text: "Promoting Ethiopian culture through global trade, showcasing the unique offerings of the nation to the world.",
+                    },
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start space-x-4">
+                      <div className="flex-shrink-0">
+                        <item.icon className="h-8 w-8 text-yellow-400" />
+                      </div>
+                      <p className="text-lg sm:text-xl lg:text-2xl text-gray-200 font-medium leading-relaxed">
+                        {item.text}
+                      </p>
+                    </div>
+                  ))}
+                </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button
                     size="lg"
@@ -273,53 +391,43 @@ export default function Home() {
                   </Button>
                 </div>
               </div>
-              <div className="hidden lg:block lg:w-1/2">
-              <Slider {...settings}>
-      {heroImages.map((img, idx) => (
-        <div key={idx} className="w-full h-full">
-          <Image
-            src={img}
-            alt={`Ethiopian landscape ${idx + 1}`}
-            width={500}
-            height={500}
-            objectFit="cover"
-            className="rounded-lg shadow-2xl"
-          />
-        </div>
-      ))}
-    </Slider>
-    </div>
-              
+              <div className="hidden lg:block lg:w-1/2 lg:h-auto">
+                <Slider {...settings}>
+                  {heroImages.map((img, idx) => (
+                    <div key={idx}>
+                      <Image
+                        src={img}
+                        alt={`Ethiopian landscape ${idx + 1}`}
+                        // width={500}
+                        // height={500}
+                        // objectFit="cover"
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        style={{ width: "100%", height: "50%" }} // optional
+                        className="rounded-lg shadow-2xl"
+                      />
+                    </div>
+                  ))}
+                </Slider>
+              </div>
             </div>
           </section>
+
           <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/50 to-transparent"></div>
-        </section>
+        </section> */}
         <div className="min-h-screen bg-gray-200">
-          <section id="about-section" className="relative  text-black py-24">
-            <div className="absolute inset-0 z-0"></div>
-            <div className="relative z-10 container mx-auto px-4">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                About KK PLC
-              </h1>
-              <p className="text-xl max-w-3xl">
-                KK PLC is the largest business entity in Ethiopia, established
-                by the visionary Mr. Ketema Kebede over forty years ago. Our
-                diverse portfolio spans manufacturing, export, and real estate,
-                contributing significantly to Ethiopia&apos;s economic growth.
-              </p>
-            </div>
-          </section>
 
           <section className="py-20 container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-6">Our Legacy</h2>
+                <h2 className="text-3xl font-bold mb-6">
+                About KK PLC</h2>
                 <p className="text-lg text-gray-700 mb-6">
-                  For over four decades, KK PLC has been at the forefront of
-                  Ethiopian business, driving innovation and economic
-                  development. Founded by Mr. Ketema Kebede, our company has
-                  grown from humble beginnings to become the largest business
-                  entity in Ethiopia.
+                KK PLC is the largest business entity in Ethiopia, established
+                by the visionary Mr. Ketema Kebede over forty years ago. Our
+                diverse portfolio spans manufacturing, export, and real estate,
+                contributing significantly to Ethiopia&apos;s economic growth.
                 </p>
                 <p className="text-lg text-gray-700 mb-6">
                   Our success is built on a foundation of visionary leadership,
@@ -385,10 +493,10 @@ export default function Home() {
               Join Us in Shaping Ethiopia&apos;s Future
             </h2>
             <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
-              At KK PLC, we&apos;re not just building a business; we&apos;re building a
-              nation. Our commitment to excellence, innovation, and sustainable
-              development continues to drive us forward. Join us as we work
-              towards a brighter future for Ethiopia and beyond.
+              At KK PLC, we&apos;re not just building a business; we&apos;re
+              building a nation. Our commitment to excellence, innovation, and
+              sustainable development continues to drive us forward. Join us as
+              we work towards a brighter future for Ethiopia and beyond.
             </p>
             <Button className="bg-blue-600 hover:bg-blue-700 text-white">
               Contact Us
