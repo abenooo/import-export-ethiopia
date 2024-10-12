@@ -1,5 +1,5 @@
 import { Facebook, Twitter, Linkedin, Instagram, Send } from "lucide-react"
-import { Input } from "@/components/ui/input"
+// import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 
 export default function Footer() {
@@ -145,11 +145,11 @@ export default function Footer() {
         <div className="mt-8">
           <h3 className="text-lg font-semibold mb-4">Subscribe to Our Newsletter</h3>
           <form className="flex space-x-2">
-            <Input
+            {/* <Input
               type="email"
               placeholder="Enter your email"
               className="bg-gray-800 text-white border-gray-700 focus:border-blue-500"
-            />
+            /> */}
             <Button type="submit" className="bg-blue-600 hover:bg-blue-700">
               <Send className="h-4 w-4 mr-2" />
               Subscribe

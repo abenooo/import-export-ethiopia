@@ -4,9 +4,6 @@ import {
   Globe,
   ChevronLeft,
   ChevronRight,
-  ShoppingCart,
-  Truck,
-  Users,
   ArrowRight,
 } from "lucide-react";
 import { Link } from "react-scroll";
@@ -23,9 +20,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+// import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Printer, Mail, Inbox } from "lucide-react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -35,7 +30,7 @@ import heroImage1 from "./public/assets/image.jpg";
 import heroImage2 from "./public/assets/image2.jpg";
 import heroImage3 from "./public/assets/image.jpg";
 export default function Home() {
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
 
   // Carousel settings
   const settings = {
@@ -63,30 +58,29 @@ export default function Home() {
       (prev) => (prev - 1 + testimonials.length) % testimonials.length
     );
 
-  const services = [
-    {
-      icon: Globe,
-      title: "Global Trade Network",
-      description: "Connect with verified importers and exporters worldwide",
-    },
-    {
-      icon: ShoppingCart,
-      title: "Market Analysis",
-      description: "Get real-time insights on global market trends and demands",
-    },
-    {
-      icon: Users,
-      title: "Business Matchmaking",
-      description:
-        "Find the perfect business partners with our AI-powered matching",
-    },
-    {
-      icon: Truck,
-      title: "Logistics Support",
-      description:
-        "Streamline your shipping and customs processes with our tools",
-    },
-  ];
+  //   {
+  //     icon: Globe,
+  //     title: "Global Trade Network",
+  //     description: "Connect with verified importers and exporters worldwide",
+  //   },
+  //   {
+  //     icon: ShoppingCart,
+  //     title: "Market Analysis",
+  //     description: "Get real-time insights on global market trends and demands",
+  //   },
+  //   {
+  //     icon: Users,
+  //     title: "Business Matchmaking",
+  //     description:
+  //       "Find the perfect business partners with our AI-powered matching",
+  //   },
+  //   {
+  //     icon: Truck,
+  //     title: "Logistics Support",
+  //     description:
+  //       "Streamline your shipping and customs processes with our tools",
+  //   },
+  // ];
   const businessAreas = [
     {
       title: "Manufacturing",
@@ -197,7 +191,7 @@ export default function Home() {
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <button
-                onClick={() => setIsOpen(false)}
+                // onClick={() => setIsOpen(false)}
                 className="flex items-center"
               >
                 <Globe className="h-8 w-8 text-blue-600" />
@@ -311,7 +305,7 @@ export default function Home() {
                 KK PLC is the largest business entity in Ethiopia, established
                 by the visionary Mr. Ketema Kebede over forty years ago. Our
                 diverse portfolio spans manufacturing, export, and real estate,
-                contributing significantly to Ethiopia's economic growth.
+                contributing significantly to Ethiopia&apos;s economic growth.
               </p>
             </div>
           </section>
@@ -388,10 +382,10 @@ export default function Home() {
 
           <section className="py-20 container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-6">
-              Join Us in Shaping Ethiopia's Future
+              Join Us in Shaping Ethiopia&apos;s Future
             </h2>
             <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
-              At KK PLC, we're not just building a business; we're building a
+              At KK PLC, we&apos;re not just building a business; we&apos;re building a
               nation. Our commitment to excellence, innovation, and sustainable
               development continues to drive us forward. Join us as we work
               towards a brighter future for Ethiopia and beyond.
@@ -504,11 +498,11 @@ export default function Home() {
                 <CardHeader>
                   <CardTitle>Send us a message</CardTitle>
                   <CardDescription>
-                    We'd love to hear from you. Fill out the form below and
-                    we'll get back to you as soon as possible.
+                    We&apos;d love to hear from you. Fill out the form below and
+                    we&apos;ll get back to you as soon as possible.
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                {/* <CardContent>
                   <form className="space-y-4">
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
@@ -528,19 +522,11 @@ export default function Home() {
                         type="email"
                       />
                     </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="message">Message</Label>
-                      <Textarea
-                        className="min-h-[100px]"
-                        id="message"
-                        placeholder="Enter your message here"
-                      />
-                    </div>
                     <Button className="w-full" type="submit">
                       Send Message
                     </Button>
                   </form>
-                </CardContent>
+                </CardContent> */}
               </Card>
 
               <Card className="w-full">
