@@ -21,7 +21,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import heroImage1 from "./public/assets/image.jpg";
 import heroImage2 from "./public/assets/image2.jpg";
-import heroImage3 from "./public/assets/image.jpg";
+import heroImage3 from "./public/assets/coffee.jpeg";
 import { Coffee, ShoppingBag, Leaf, Users } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
