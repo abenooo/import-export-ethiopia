@@ -15,12 +15,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-// import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Printer, Mail, Inbox } from "lucide-react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-// Import your images directly
 import heroImage1 from "./public/assets/image.jpg";
 import heroImage2 from "./public/assets/image2.jpg";
 import heroImage3 from "./public/assets/image.jpg";
@@ -29,9 +27,6 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 export default function Home() {
-  // const [isOpen, setIsOpen] = useState(false);
-
-  // Carousel settings
   const settings = {
     dots: true,
     infinite: true,
@@ -51,29 +46,6 @@ export default function Home() {
       (prev) => (prev - 1 + testimonials.length) % testimonials.length
     );
 
-  //   {
-  //     icon: Globe,
-  //     title: "Global Trade Network",
-  //     description: "Connect with verified importers and exporters worldwide",
-  //   },
-  //   {
-  //     icon: ShoppingCart,
-  //     title: "Market Analysis",
-  //     description: "Get real-time insights on global market trends and demands",
-  //   },
-  //   {
-  //     icon: Users,
-  //     title: "Business Matchmaking",
-  //     description:
-  //       "Find the perfect business partners with our AI-powered matching",
-  //   },
-  //   {
-  //     icon: Truck,
-  //     title: "Logistics Support",
-  //     description:
-  //       "Streamline your shipping and customs processes with our tools",
-  //   },
-  // ];
   const businessAreas = [
     {
       title: "Manufacturing",
@@ -184,7 +156,6 @@ export default function Home() {
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <button
-                // onClick={() => setIsOpen(false)}
                 className="flex items-center"
               >
                 <Globe className="h-8 w-8 text-blue-600" />
@@ -203,7 +174,6 @@ export default function Home() {
                   offset={-70}
                   duration={500}
                   activeClass="relative font-medium text-primary before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-primary before:transition hover:before:scale-x-100"
-                  // activeClass="bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 "
                   className="cursor-pointer inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900 border-b-2 border-transparent hover:border-blue-500 transition duration-300"
                 >
                   {item.name}
@@ -306,119 +276,6 @@ export default function Home() {
         </div>
       </div>
     </section>
-        {/* <section
-          id="home-section"
-          className="relative bg-gradient-to-r from-blue-700 to-green-600 text-white overflow-hidden"
-        >
-          <div className="absolute inset-0 z-0">
-            <Image
-              src={heroImage}
-              alt="Ethiopian landscape with coffee plantations and mountains"
-              layout="fill"
-              objectFit="cover"
-              className="opacity-20"
-            />
-          </div>
-          <section
-            id="home-section"
-            className="relative bg-gradient-to-r from-blue-700 to-green-600 text-white overflow-hidden"
-          >
-            <div className="container mx-auto px-4 py-24 sm:py-32 lg:py-40 flex flex-col lg:flex-row">
-              <div className="lg:hidden w-full">
-                <Slider {...settings}>
-                  {heroImages.map((img, idx) => (
-                    <div key={idx}>
-                      <Image
-                        src={img}
-                        alt={`Ethiopian landscape ${idx + 1}`}
-                        width={500}
-                        height={500}
-                        objectFit="cover"
-                        className="rounded-lg shadow-2xl"
-                      />
-                    </div>
-                  ))}
-                </Slider>
-              </div>
-              <div className="w-full lg:w-1/2 space-y-6">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-white tracking-tight">
-                  Bridging Ethiopia with Global Markets
-                </h1>
-                <div className="space-y-6">
-                  {[
-                    {
-                      icon: Coffee,
-                      text: "Facilitating seamless trade partnerships and fostering economic growth by exporting Ethiopia's finest coffee, textiles, and traditional crafts.",
-                    },
-                    {
-                      icon: ShoppingBag,
-                      text: "Enhancing the global presence of Ethiopian products through dedicated support and comprehensive trade solutions.",
-                    },
-                    {
-                      icon: Globe,
-                      text: "Connecting local producers with international buyers to expand market reach and increase profitability.",
-                    },
-                    {
-                      icon: Leaf,
-                      text: "Leveraging Ethiopia's rich resources to meet the demand of global markets, ensuring quality and sustainability.",
-                    },
-                    {
-                      icon: Users,
-                      text: "Promoting Ethiopian culture through global trade, showcasing the unique offerings of the nation to the world.",
-                    },
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-start space-x-4">
-                      <div className="flex-shrink-0">
-                        <item.icon className="h-8 w-8 text-yellow-400" />
-                      </div>
-                      <p className="text-lg sm:text-xl lg:text-2xl text-gray-200 font-medium leading-relaxed">
-                        {item.text}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button
-                    size="lg"
-                    className="bg-yellow-500 text-blue-900 hover:bg-yellow-400"
-                  >
-                    Explore Our Services
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="text-gray-900 border-white hover:bg-white/20"
-                  >
-                    Contact Us
-                  </Button>
-                </div>
-              </div>
-              <div className="hidden lg:block lg:w-1/2 lg:h-auto">
-                <Slider {...settings}>
-                  {heroImages.map((img, idx) => (
-                    <div key={idx}>
-                      <Image
-                        src={img}
-                        alt={`Ethiopian landscape ${idx + 1}`}
-                        // width={500}
-                        // height={500}
-                        // objectFit="cover"
-                        width={0}
-                        height={0}
-                        sizes="100vw"
-                        style={{ width: "100%", height: "50%" }} // optional
-                        className="rounded-lg shadow-2xl"
-                      />
-                    </div>
-                  ))}
-                </Slider>
-              </div>
-            </div>
-          </section>
-
-          <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/50 to-transparent"></div>
-        </section> */}
         <div className="min-h-screen bg-gray-200">
 
           <section className="py-20 container mx-auto px-4">
