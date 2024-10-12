@@ -118,42 +118,42 @@ export default function Home() {
   const testimonials = [
     {
       quote:
-        "TradeAtlas has revolutionized how we find international business opportunities.",
+        "PamRisen has revolutionized how we find international business opportunities.",
       author: "Abebe Kebede",
       role: "Ethiopian Coffee Exporter",
       avatar: "/placeholder.svg?height=100&width=100",
     },
     {
       quote:
-        "The market insights provided by TradeAtlas have been invaluable for our growth strategy.",
+        "The market insights provided by PamRisen have been invaluable for our growth strategy.",
       author: "Fatima Ahmed",
       role: "Textile Importer",
       avatar: "/placeholder.svg?height=100&width=100",
     },
     {
       quote:
-        "We've expanded into new markets effortlessly thanks to TradeAtlas's global network.",
+        "We've expanded into new markets effortlessly thanks to PamRisen's global network.",
       author: "Dawit Haile",
       role: "Agricultural Products Exporter",
       avatar: "/placeholder.svg?height=100&width=100",
     },
     {
       quote:
-        "TradeAtlas's AI-powered matching has connected us with perfect business partners.",
+        "PamRisen's AI-powered matching has connected us with perfect business partners.",
       author: "Tigist Mengesha",
       role: "Leather Goods Manufacturer",
       avatar: "/placeholder.svg?height=100&width=100",
     },
     {
       quote:
-        "The logistics support from TradeAtlas has simplified our international shipping process.",
+        "The logistics support from PamRisen has simplified our international shipping process.",
       author: "Yohannes Tadesse",
       role: "Electronics Importer",
       avatar: "/placeholder.svg?height=100&width=100",
     },
     {
       quote:
-        "We've seen a 30% increase in exports since using TradeAtlas's market analysis tools.",
+        "We've seen a 30% increase in exports since using PamRisen's market analysis tools.",
       author: "Hiwot Gebremariam",
       role: "Spice Exporter",
       avatar: "/placeholder.svg?height=100&width=100",
