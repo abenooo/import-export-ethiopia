@@ -84,7 +84,7 @@ export default function Home() {
     {
       title: "Export",
       description:
-        "The exporting department at KK PLC mainly focuses on the international operation of the company, aiming to promote Ethiopian Coffee, Pulse, Oil Seed, and Mining to overseas markets.",
+        "The exporting department at PamRisen mainly focuses on the international operation of the company, aiming to promote Ethiopian Coffee, Pulse, Oil Seed, and Mining to overseas markets.",
       image: "/placeholder.svg?height=200&width=400&text=Export",
     },
     {
@@ -425,9 +425,9 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-bold mb-6">
-                About KK PLC</h2>
+                About PamRisen</h2>
                 <p className="text-lg text-gray-700 mb-6">
-                KK PLC is the largest business entity in Ethiopia, established
+                PamRisen is the largest business entity in Ethiopia, established
                 by the visionary Mr. Ketema Kebede over forty years ago. Our
                 diverse portfolio spans manufacturing, export, and real estate,
                 contributing significantly to Ethiopia&apos;s economic growth.
@@ -447,7 +447,7 @@ export default function Home() {
               <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
                 <Image
                   src={heroImage}
-                  alt="KK PLC growth timeline"
+                  alt="PamRisen growth timeline"
                   layout="fill"
                   objectFit="cover"
                 />
@@ -496,7 +496,7 @@ export default function Home() {
               Join Us in Shaping Ethiopia&apos;s Future
             </h2>
             <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
-              At KK PLC, we&apos;re not just building a business; we&apos;re
+              At PamRisen, we&apos;re not just building a business; we&apos;re
               building a nation. Our commitment to excellence, innovation, and
               sustainable development continues to drive us forward. Join us as
               we work towards a brighter future for Ethiopia and beyond.
