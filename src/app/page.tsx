@@ -77,26 +77,25 @@ export default function Home() {
       icon: Building2,
     },
   ];
-  const businessAreas = [
-    {
-      title: "Manufacturing",
-      description:
-        "The blanket and acrylic yarn dyeing plant is the major line of manufacturing business portfolio of KK. Our factory is equipped with modern computerized and automated machines, as well as conventional technology machines.",
-      image: "/placeholder.svg?height=200&width=400&text=Manufacturing",
-    },
-    {
-      title: "Export",
-      description:
-        "The exporting department at PamRisen mainly focuses on the international operation of the company, aiming to promote Ethiopian Coffee, Pulse, Oil Seed, and Mining to overseas markets.",
-      image: "/placeholder.svg?height=200&width=400&text=Export",
-    },
-    {
-      title: "Real Estate",
-      description:
-        "Our company implements innovative solutions in the engineering, design, and strategy sectors with the potential to create aesthetically marvelous spaces.",
-      image: "/placeholder.svg?height=200&width=400&text=Real+Estate",
-    },
-  ];
+  //   {
+  //     title: "Manufacturing",
+  //     description:
+  //       "The blanket and acrylic yarn dyeing plant is the major line of manufacturing business portfolio of KK. Our factory is equipped with modern computerized and automated machines, as well as conventional technology machines.",
+  //     image: "/placeholder.svg?height=200&width=400&text=Manufacturing",
+  //   },
+  //   {
+  //     title: "Export",
+  //     description:
+  //       "The exporting department at PamRisen mainly focuses on the international operation of the company, aiming to promote Ethiopian Coffee, Pulse, Oil Seed, and Mining to overseas markets.",
+  //     image: "/placeholder.svg?height=200&width=400&text=Export",
+  //   },
+  //   {
+  //     title: "Real Estate",
+  //     description:
+  //       "Our company implements innovative solutions in the engineering, design, and strategy sectors with the potential to create aesthetically marvelous spaces.",
+  //     image: "/placeholder.svg?height=200&width=400&text=Real+Estate",
+  //   },
+  // ];
   const testimonials = [
     {
       quote:
@@ -368,7 +367,7 @@ export default function Home() {
                       </CardContent>
                       <CardFooter className="pt-6">
                         <Button className="w-full text-lg py-6">
-                          Read More
+                        Business Area
                         </Button>
                       </CardFooter>
                     </Card>
