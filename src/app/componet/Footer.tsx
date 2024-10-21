@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Linkedin, Instagram, Send } from "lucide-react"
+import { Facebook, Twitter, Linkedin, Instagram, Send, Globe } from "lucide-react"
 // import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -9,13 +9,18 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <img
-              src="/placeholder.svg?height=50&width=200"
-              alt="TradeAtlas white vector official logo"
-              className="h-12 w-auto mb-4"
-            />
+          
+            {/* <Globe className="h-8 w-8 text-blue-600" /> */}
+            <div className="flex items-center">
+              <button className="flex items-center">
+                <Globe className="h-8 w-8 text-blue-600" />
+                <span className="ml-2 text-xl font-bold text-gray-50">
+                  PamRisen
+                </span>
+              </button>
+            </div>
             <p className="text-sm text-gray-400 mb-4">
-              TradeAtlas is a digital platform that provides actual importer and exporter company information about all
+              PamRisen is a digital platform that provides actual importer and exporter company information about all
               products, finds the most suitable importers for your company with artificial intelligence technology and
               brings you to the importers of the future.
             </p>
@@ -127,7 +132,7 @@ export default function Footer() {
         <div className="mt-12 border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-gray-400 mb-4 md:mb-0">
-              © {new Date().getFullYear()} TradeAtlas. All rights reserved.
+              © {new Date().getFullYear()} PamRisen. All rights reserved.
             </div>
             <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
               <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">
