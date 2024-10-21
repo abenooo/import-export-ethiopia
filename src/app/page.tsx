@@ -465,12 +465,12 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section
+        {/* <section
           id="clients-section"
           className="min-h-screen flex items-center justify-center"
-        >
+        > */}
           {/* Testimonial Section */}
-          <section className="py-20">
+          {/* <section className="py-20">
               <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100 overflow-hidden">
                 <div className="container mx-auto px-4">
                   <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
@@ -554,7 +554,7 @@ export default function Home() {
                 </div>
               </section>
           </section>
-        </section>
+        </section> */}
         {/* CTA Section */}
         <section
           id="contact-section"
