@@ -28,9 +28,11 @@ import { MapPin, Phone, Printer, Mail, Inbox } from "lucide-react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import heroImage1 from "./public/assets/image.jpg";
-import heroImage2 from "./public/assets/image2.jpg";
-import heroImage3 from "./public/assets/coffee.jpeg";
+import img2 from "./public/assets/img2.webp";
+import img3 from "./public/assets/img3.webp";
+import img4 from "./public/assets/img4.webp";
+import img5 from "./public/assets/img5.webp";
+import img6 from "./public/assets/img6.webp";
 import { Coffee, ShoppingBag, Leaf, Users } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -65,7 +67,7 @@ export default function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const heroImages = [heroImage1, heroImage2, heroImage3];
+  const heroImages = [img2,img3, img4,img5,img6];
 
   const nextTestimonial = () =>
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
