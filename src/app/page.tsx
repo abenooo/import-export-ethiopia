@@ -1,14 +1,9 @@
 "use client";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import {
   Globe,
-  ChevronLeft,
-  ChevronRight,
   ArrowRight,
-  Factory,
-  Palette,
   Heart,
-  Building2,
 } from "lucide-react";
 import { Link } from "react-scroll";
 import { Button } from "@/components/ui/button";
@@ -24,7 +19,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { MapPin, Phone, Printer, Mail, Inbox } from "lucide-react";
+import { MapPin, Phone, Mail, Inbox } from "lucide-react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -33,11 +28,10 @@ import img3 from "./public/assets/img3.webp";
 import img4 from "./public/assets/img4.webp";
 import img5 from "./public/assets/img5.webp";
 import img6 from "./public/assets/img6.webp";
-import { Coffee, ShoppingBag, Leaf, Users } from "lucide-react";
+import { Coffee, ShoppingBag, Leaf } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 export default function Home() {
   const settings = {
     dots: true,
@@ -48,56 +42,39 @@ export default function Home() {
     autoplay: true,
     autoplaySpeed: 2000,
   };
-  // const [currentTestimonial, setCurrentTestimonial] = useState(0)
-  const [cardsToShow, setCardsToShow] = useState(3);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 1024) {
-        setCardsToShow(3);
-      } else if (window.innerWidth >= 768) {
-        setCardsToShow(2);
-      } else {
-        setCardsToShow(1);
-      }
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const heroImages = [img2, img3, img4, img5, img6];
 
-  const nextTestimonial = () =>
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-  const prevTestimonial = () =>
-    setCurrentTestimonial(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length
-    );
-  const areas = [
-    {
-      title: "Manufacturing",
-      description: "Manufacturing operations",
-      content:
-        "The blanket and acrylic yarn dyeing plant is the major line of manufacturing business portfolio of KK. Our factory is equipped with modern computerized and automated machines, as well as conventional technology machines.",
-      icon: Factory,
-    },
-    {
-      title: "Export",
-      description: "Export operations",
-      content:
-        "The exporting department at PamRisen mainly focuses on the international operation of the company, aiming to promote Ethiopian Coffee, Pulse, Oil Seed, and Mining to overseas markets.",
-      icon: Globe,
-    },
-    {
-      title: "Real Estate",
-      description: "Real Estate operations",
-      content:
-        "Our company implements innovative solutions in the engineering, design, and strategy sectors with the potential to create aesthetically marvelous spaces.",
-      icon: Building2,
-    },
-  ];
+  // const nextTestimonial = () =>
+  //   setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+  // const prevTestimonial = () =>
+  //   setCurrentTestimonial(
+  //     (prev) => (prev - 1 + testimonials.length) % testimonials.length
+  //   );
+  // const areas = [
+  //   {
+  //     title: "Manufacturing",
+  //     description: "Manufacturing operations",
+  //     content:
+  //       "The blanket and acrylic yarn dyeing plant is the major line of manufacturing business portfolio of KK. Our factory is equipped with modern computerized and automated machines, as well as conventional technology machines.",
+  //     icon: Factory,
+  //   },
+  //   {
+  //     title: "Export",
+  //     description: "Export operations",
+  //     content:
+  //       "The exporting department at PamRisen mainly focuses on the international operation of the company, aiming to promote Ethiopian Coffee, Pulse, Oil Seed, and Mining to overseas markets.",
+  //     icon: Globe,
+  //   },
+  //   {
+  //     title: "Real Estate",
+  //     description: "Real Estate operations",
+  //     content:
+  //       "Our company implements innovative solutions in the engineering, design, and strategy sectors with the potential to create aesthetically marvelous spaces.",
+  //     icon: Building2,
+  //   },
+  // ];
   //   {
   //     title: "Manufacturing",
   //     description:
@@ -117,50 +94,50 @@ export default function Home() {
   //     image: "/placeholder.svg?height=200&width=400&text=Real+Estate",
   //   },
   // ];
-  const testimonials = [
-    {
-      quote:
-        "PamRisen has revolutionized how we find international business opportunities.",
-      author: "Abebe Kebede",
-      role: "Ethiopian Coffee Exporter",
-      avatar: "/placeholder.svg?height=100&width=100",
-    },
-    {
-      quote:
-        "The market insights provided by PamRisen have been invaluable for our growth strategy.",
-      author: "Fatima Ahmed",
-      role: "Textile Importer",
-      avatar: "/placeholder.svg?height=100&width=100",
-    },
-    {
-      quote:
-        "We've expanded into new markets effortlessly thanks to PamRisen's global network.",
-      author: "Dawit Haile",
-      role: "Agricultural Products Exporter",
-      avatar: "/placeholder.svg?height=100&width=100",
-    },
-    {
-      quote:
-        "PamRisen's AI-powered matching has connected us with perfect business partners.",
-      author: "Tigist Mengesha",
-      role: "Leather Goods Manufacturer",
-      avatar: "/placeholder.svg?height=100&width=100",
-    },
-    {
-      quote:
-        "The logistics support from PamRisen has simplified our international shipping process.",
-      author: "Yohannes Tadesse",
-      role: "Electronics Importer",
-      avatar: "/placeholder.svg?height=100&width=100",
-    },
-    {
-      quote:
-        "We've seen a 30% increase in exports since using PamRisen's market analysis tools.",
-      author: "Hiwot Gebremariam",
-      role: "Spice Exporter",
-      avatar: "/placeholder.svg?height=100&width=100",
-    },
-  ];
+  // const testimonials = [
+  //   {
+  //     quote:
+  //       "PamRisen has revolutionized how we find international business opportunities.",
+  //     author: "Abebe Kebede",
+  //     role: "Ethiopian Coffee Exporter",
+  //     avatar: "/placeholder.svg?height=100&width=100",
+  //   },
+  //   {
+  //     quote:
+  //       "The market insights provided by PamRisen have been invaluable for our growth strategy.",
+  //     author: "Fatima Ahmed",
+  //     role: "Textile Importer",
+  //     avatar: "/placeholder.svg?height=100&width=100",
+  //   },
+  //   {
+  //     quote:
+  //       "We've expanded into new markets effortlessly thanks to PamRisen's global network.",
+  //     author: "Dawit Haile",
+  //     role: "Agricultural Products Exporter",
+  //     avatar: "/placeholder.svg?height=100&width=100",
+  //   },
+  //   {
+  //     quote:
+  //       "PamRisen's AI-powered matching has connected us with perfect business partners.",
+  //     author: "Tigist Mengesha",
+  //     role: "Leather Goods Manufacturer",
+  //     avatar: "/placeholder.svg?height=100&width=100",
+  //   },
+  //   {
+  //     quote:
+  //       "The logistics support from PamRisen has simplified our international shipping process.",
+  //     author: "Yohannes Tadesse",
+  //     role: "Electronics Importer",
+  //     avatar: "/placeholder.svg?height=100&width=100",
+  //   },
+  //   {
+  //     quote:
+  //       "We've seen a 30% increase in exports since using PamRisen's market analysis tools.",
+  //     author: "Hiwot Gebremariam",
+  //     role: "Spice Exporter",
+  //     avatar: "/placeholder.svg?height=100&width=100",
+  //   },
+  // ];
   const navItems = [
     { name: "Home", id: "home-section" },
     { name: "About Us", id: "about-section" },
@@ -168,7 +145,7 @@ export default function Home() {
     { name: "Clients", id: "clients-section" },
     { name: "Contact", id: "contact-section" },
   ];
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  // const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const portfolioItems = [
     {
       title: "EXPORT BUSINESS",
