@@ -67,7 +67,7 @@ export default function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const heroImages = [img2,img3, img4,img5,img6];
+  const heroImages = [img2, img3, img4, img5, img6];
 
   const nextTestimonial = () =>
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -171,44 +171,30 @@ export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const portfolioItems = [
     {
-      title: "Manufacturing",
+      title: "EXPORT BUSINESS",
       description:
-        "State-of-the-art manufacturing facilities producing high-quality goods.",
-      icon: "🏭",
-      tags: ["Industrial", "Production"],
-    },
-    {
-      title: "Agriculture",
-      description:
-        "Sustainable farming practices and agricultural innovations.",
+        "Specializing in the global distribution of sustainable products, from agricultural innovations to industrial solutions.",
       icon: "🌾",
-      tags: ["Farming", "Sustainability"],
+      tags: [
+        "International Trade",
+        "Sustainability",
+        "Economic Growth",
+        "Environmental Stewardship",
+      ],
     },
     {
-      title: "Real Estate",
-      description: "Premium residential and commercial property development.",
+      title: "SPARE PART SALES",
+      description:
+        "Offering a comprehensive range of high-quality spare parts for various industries, ensuring reliability and performance.",
       icon: "🏢",
-      tags: ["Property", "Development"],
-    },
-    {
-      title: "Technology",
-      description: "Cutting-edge tech solutions for businesses and consumers.",
-      icon: "💻",
-      tags: ["Innovation", "Digital"],
-    },
-    {
-      title: "Hospitality",
-      description:
-        "Luxury hotels and resorts providing world-class experiences.",
-      icon: "🏨",
-      tags: ["Tourism", "Service"],
-    },
-    {
-      title: "Education",
-      description:
-        "Investing in the future through quality educational institutions.",
-      icon: "🎓",
-      tags: ["Learning", "Development"],
+      tags: [
+        "Replacement Parts",
+        "Industrial Supplies",
+        "Equipment Maintenance",
+        "Operational Efficiency",
+        "Product Longevity",
+        "Part Sourcing",
+      ],
     },
   ];
 
@@ -276,18 +262,6 @@ export default function Home() {
                       text: "Leveraging Ethiopia's rich resources to meet global market demands.",
                     },
                     {
-                      icon: Users,
-                      text: "Promoting Ethiopian culture and artisan skills on the global stage.",
-                    },
-                    {
-                      icon: Factory,
-                      text: "Empowering local manufacturing with advanced technologies for higher market competitiveness.",
-                    },
-                    {
-                      icon: Palette,
-                      text: "Showcasing the vibrancy and diversity of Ethiopian textiles and crafts.",
-                    },
-                    {
                       icon: Heart,
                       text: "Building community partnerships to sustain and grow the Ethiopian export sector.",
                     },
@@ -329,8 +303,8 @@ export default function Home() {
                           alt={`Ethiopian landscape ${idx + 1}`}
                           width={800}
                           height={600}
-                          objectFit="cover"
-                          className="w-full h-[400px] object-cover"
+                          objectFit="fit"
+                          className="w-full h-[400px] object-fit"
                         />
                       </div>
                     ))}
@@ -346,18 +320,10 @@ export default function Home() {
               <div>
                 <h2 className="text-3xl font-bold mb-6">About PamRisen</h2>
                 <p className="text-lg text-gray-700 mb-6">
-                  PamRisen is the largest business entity in Ethiopia,
-                  established by the visionary Mr. Ketema Kebede over forty
-                  years ago. Our diverse portfolio spans manufacturing, export,
-                  and real estate, contributing significantly to Ethiopia&apos;s
-                  economic growth.
-                </p>
-                <p className="text-lg text-gray-700 mb-6">
-                  Our success is built on a foundation of visionary leadership,
-                  commitment to quality, and a deep understanding of both local
-                  and international markets. We continue to expand our reach and
-                  impact, always with an eye towards sustainable growth and
-                  community development.
+                  Genuine Spare part Our Company importing and sale different
+                  heavy construction machinery genuine parts for different
+                  construction machineries for the past seven year in Ethiopian
+                  market
                 </p>
                 <Button className="bg-blue-600 hover:bg-blue-700 text-white">
                   Learn More About Our History
@@ -374,7 +340,6 @@ export default function Home() {
               </div>
             </div>
           </section>
-
           <section className="bg-gray-100 py-20">
             <div className="container mx-auto px-4">
               <div className="container mx-auto px-4 py-12">
@@ -382,29 +347,61 @@ export default function Home() {
                   Our Business Areas
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {areas.map((area, index) => (
-                    <Card key={index} className="flex flex-col h-full">
-                      <CardHeader className="text-center">
-                        <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                          <area.icon className="w-10 h-10 text-primary-foreground" />
-                        </div>
-                        <CardTitle className="text-2xl mb-2">
-                          {area.title}
-                        </CardTitle>
-                        <CardDescription className="text-lg">
-                          {area.description}
-                        </CardDescription>
-                      </CardHeader>
-                      <CardContent className="flex-grow text-center">
-                        <p className="text-muted-foreground">{area.content}</p>
-                      </CardContent>
-                      <CardFooter className="pt-6">
-                        <Button className="w-full text-lg py-6">
-                          Business Area
-                        </Button>
-                      </CardFooter>
-                    </Card>
-                  ))}
+                  {/* Heavy Machinery Spare Part Sales */}
+                  <Card className="flex flex-col h-full">
+                    <CardHeader className="text-center">
+                      <div className="w-20 h-20 bg-black bg-opacity-75 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span className="text-white font-medium">HMS</span>{" "}
+                        {/* Added text */}
+                      </div>
+                      <CardTitle className="text-2xl mb-2">
+                        Heavy Machinery Spare Part Sales
+                      </CardTitle>
+                      <CardDescription className="text-lg">
+                        Specialized in providing high-quality spare parts for
+                        heavy machinery, ensuring operational reliability and
+                        efficiency.
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="flex-grow text-center">
+                      <p className="text-muted-foreground">
+                        Replacement Parts, Maintenance, Efficiency, Industrial
+                        Support
+                      </p>
+                    </CardContent>
+                    <CardFooter className="pt-6">
+                      <Button className="w-full text-lg py-6">
+                        Learn More
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                  {/* Export Business */}
+                  <Card className="flex flex-col h-full">
+                    <CardHeader className="text-center">
+                      <div className="w-20 h-20 bg-black bg-opacity-75 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span className="text-white font-medium">EXP</span>{" "}
+                        {/* Added text */}
+                      </div>
+                      <CardTitle className="text-2xl mb-2">
+                        Export Business
+                      </CardTitle>
+                      <CardDescription className="text-lg">
+                        Expertise in the global distribution of sustainable
+                        products across agricultural and industrial sectors.
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="flex-grow text-center">
+                      <p className="text-muted-foreground">
+                        International Trade, Sustainability, Global Markets,
+                        Quality Compliance
+                      </p>
+                    </CardContent>
+                    <CardFooter className="pt-6">
+                      <Button className="w-full text-lg py-6">
+                        Explore Opportunities
+                      </Button>
+                    </CardFooter>
+                  </Card>
                 </div>
               </div>
             </div>
@@ -435,7 +432,7 @@ export default function Home() {
               Our Portfolio
             </h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-              KK has become one of the prominent businesses in Ethiopia,
+              PamRisen has become one of the prominent businesses in Ethiopia,
               successfully diversifying its operations across multiple sectors.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -465,96 +462,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* <section
-          id="clients-section"
-          className="min-h-screen flex items-center justify-center"
-        > */}
-          {/* Testimonial Section */}
-          {/* <section className="py-20">
-              <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100 overflow-hidden">
-                <div className="container mx-auto px-4">
-                  <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
-                    What Our Clients Say
-                  </h2>
-                  <div className="relative max-w-7xl mx-auto">
-                    <div
-                      className="flex space-x-6 mb-8 transition-transform duration-300 ease-in-out"
-                      style={{
-                        transform: `translateX(-${
-                          currentTestimonial * (100 / cardsToShow)
-                        }%)`,
-                      }}
-                    >
-                      {testimonials.map((testimonial, index) => (
-                        <Card
-                          key={index}
-                          className={`bg-white shadow-lg flex-shrink-0 transform transition-all duration-300 ${
-                            index % 2 === 0 ? "translate-y-5" : ""
-                          }`}
-                          style={{
-                            width: `calc(${100 / cardsToShow}% - ${
-                              (cardsToShow - 1) * 1.5
-                            }rem / ${cardsToShow})`,
-                          }}
-                        >
-                          <CardContent className="p-6">
-                            <div className="flex items-center mb-4">
-                              <Avatar className="w-16 h-16 mr-4">
-                                <AvatarImage
-                                  src={testimonial.avatar}
-                                  alt={testimonial.author}
-                                />
-                                <AvatarFallback>
-                                  {testimonial.author
-                                    .split(" ")
-                                    .map((n) => n[0])
-                                    .join("")}
-                                </AvatarFallback>
-                              </Avatar>
-                              <div>
-                                <p className="font-semibold text-lg text-gray-900">
-                                  {testimonial.author}
-                                </p>
-                                <p className="text-gray-600">
-                                  {testimonial.role}
-                                </p>
-                              </div>
-                            </div>
-                            <p className="text-lg italic text-gray-700">{`"${testimonial.quote}"`}</p>
-                          </CardContent>
-                        </Card>
-                      ))}
-                    </div>
-                    <div className="flex justify-center space-x-4 mt-8">
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        className="bg-white shadow-md hover:bg-gray-100"
-                        onClick={prevTestimonial}
-                        disabled={currentTestimonial === 0}
-                      >
-                        <ChevronLeft className="h-4 w-4" />
-                        <span className="sr-only">Previous testimonials</span>
-                      </Button>
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        className="bg-white shadow-md hover:bg-gray-100"
-                        onClick={nextTestimonial}
-                        disabled={
-                          currentTestimonial ===
-                          testimonials.length - cardsToShow
-                        }
-                      >
-                        <ChevronRight className="h-4 w-4" />
-                        <span className="sr-only">Next testimonials</span>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </section>
-          </section>
-        </section> */}
         {/* CTA Section */}
         <section
           id="contact-section"
@@ -622,24 +529,12 @@ export default function Home() {
                   <div className="space-y-2">
                     <div className="flex items-center space-x-4">
                       <Phone className="w-5 h-5 text-gray-500" />
-                      <p className="text-sm">+251-115-15-90-15</p>
-                    </div>
-                    <div className="flex items-center space-x-4">
-                      <Phone className="w-5 h-5 text-gray-500" />
-                      <p className="text-sm">+251-115-53-48-10</p>
-                    </div>
-                    <div className="flex items-center space-x-4">
-                      <Phone className="w-5 h-5 text-gray-500" />
-                      <p className="text-sm">+251-115-51-11-74</p>
+                      <p className="text-sm">+251-942-43-54-80</p>
                     </div>
                     <div className="flex items-center space-x-4">
                       <Phone className="w-5 h-5 text-gray-500" />
                       <p className="text-sm">+251-115-15-80-00</p>
                     </div>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <Printer className="w-5 h-5 text-gray-500" />
-                    <p className="text-sm">+251-151-99-49</p>
                   </div>
                   <div className="flex items-center space-x-4">
                     <Inbox className="w-5 h-5 text-gray-500" />
