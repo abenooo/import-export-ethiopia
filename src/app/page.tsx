@@ -28,6 +28,10 @@ import img3 from "./public/assets/img3.webp";
 import img4 from "./public/assets/img4.webp";
 import img5 from "./public/assets/img5.webp";
 import img6 from "./public/assets/img6.webp";
+import img55 from "./public/assets/img5.jpg";
+import img56 from "./public/assets/img6.jpg";
+import img57 from "./public/assets/img7.jpg";
+import img58 from "./public/assets/img8.jpg";
 import { Coffee, ShoppingBag, Leaf } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -44,7 +48,7 @@ export default function Home() {
   };
 
 
-  const heroImages = [img2, img3, img4, img5, img6];
+  const heroImages = [img2, img3, img4, img5, img6,img55,img56,img57,img58];
 
   // const nextTestimonial = () =>
   //   setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -506,16 +510,12 @@ export default function Home() {
                   <div className="space-y-2">
                     <div className="flex items-center space-x-4">
                       <Phone className="w-5 h-5 text-gray-500" />
-                      <p className="text-sm">+251-942-43-54-80</p>
+                      <p className="text-sm">+251-924-30-39-32</p>
                     </div>
                     <div className="flex items-center space-x-4">
                       <Phone className="w-5 h-5 text-gray-500" />
-                      <p className="text-sm">+251-115-15-80-00</p>
+                      <p className="text-sm">+251-901-53-76-85</p>
                     </div>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <Inbox className="w-5 h-5 text-gray-500" />
-                    <p className="text-sm">P.O.Box: 702</p>
                   </div>
                   <div className="flex items-center space-x-4">
                     <Mail className="w-5 h-5 text-gray-500" />
