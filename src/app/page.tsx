@@ -9,7 +9,6 @@ import { Link } from "react-scroll";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Footer from "./componet/Footer";
-import heroImage from "./public/assets/image.jpg";
 import Image from "next/image";
 import {
   Card,
