@@ -32,6 +32,7 @@ import img55 from "./public/assets/img5.jpg";
 import img56 from "./public/assets/img6.jpg";
 import img57 from "./public/assets/img7.jpg";
 import img58 from "./public/assets/img8.jpg";
+import second from "./public/assets/second.png"
 import { Coffee, ShoppingBag, Leaf } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -313,7 +314,7 @@ export default function Home() {
               </div>
               <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  src={heroImage}
+                  src={second}
                   alt="PamRisen growth timeline"
                   layout="fill"
                   objectFit="cover"
@@ -500,11 +501,7 @@ export default function Home() {
                   <div className="flex items-start space-x-4">
                     <MapPin className="w-5 h-5 mt-1 text-gray-500" />
                     <p className="text-sm">
-                      Churchil Avenue around national theater
-                      <br />
-                      Adjacent to the Commercial Bank of Ethiopia,
-                      <br />
-                      Addis Ababa Branch.
+                    address kera, Addis Ababa Ethiopia around sofiya mall
                     </p>
                   </div>
                   <div className="space-y-2">
