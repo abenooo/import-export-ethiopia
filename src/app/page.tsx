@@ -23,9 +23,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import img2 from "./public/assets/img2.webp";
-import img3 from "./public/assets/img3.webp";
 import img4 from "./public/assets/img4.webp";
-import img5 from "./public/assets/img5.webp";
 import img6 from "./public/assets/img6.webp";
 import img55 from "./public/assets/img5.jpg";
 import img56 from "./public/assets/img6.jpg";
@@ -48,7 +46,7 @@ export default function Home() {
   };
 
 
-  const heroImages = [img2, img3, img4, img5, img6,img55,img56,img57,img58];
+  const heroImages = [img2, img4, img6,img55,img56,img57,img58];
 
   // const nextTestimonial = () =>
   //   setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
